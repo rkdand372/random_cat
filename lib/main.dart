@@ -40,6 +40,13 @@ class CatService extends ChangeNotifier {
       "https://api.thecatapi.com/v1/images/search?limit=1&mime_types=jpg",
     );
     print(result.data);
+    for (var i = 0; i < result.data.length; i++) {
+      var map = result.data[i];
+      print(map);
+      print(map["url"]);
+      catImages.add(map["url"]);
+    }
+    notifyListeners();
   }
 }
 
